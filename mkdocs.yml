@@ -31,8 +31,8 @@ extra:
   generator: false
 
 nav:
-  - Inicio: Unidad-1/index.md
   - Unidad 1:
+      - Inicio: Unidad-1/index.md
       - Introducción: Unidad-1/introduccion.md
       - Sistemas Operativos: Unidad-1/sistemas-operativos.md
       - Cliente-Servidor: Unidad-1/cliente-servidor.md
