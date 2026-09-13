@@ -1,0 +1,42 @@
+site_name: DWES
+site_url: https://amverala.github.io/DWES
+
+theme:
+  name: material
+  language: es
+  features:
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid.js
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+
+
+nav:
+  - Inicio: index.md
+  - Unidad 1:
+      - Introducción: Unidad-1/introduccion.md
+      - Sistemas Operativos: Unidad-1/sistemas-operativos.md
+      - Cliente-Servidor: Unidad-1/cliente-servidor.md
+      - Servidor Local: Unidad-1/servidor-local.md
+      - Visual Studio Code: Unidad-1/visual-studio-code.md
+      - Actividades: Unidad-1/actividades.md
