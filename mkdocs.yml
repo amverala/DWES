@@ -30,9 +30,8 @@ extra_css:
 extra:
   generator: false
 
-
 nav:
-  - Inicio: index.md
+  - Inicio: Unidad-1/index.md
   - Unidad 1:
       - Introducción: Unidad-1/introduccion.md
       - Sistemas Operativos: Unidad-1/sistemas-operativos.md
