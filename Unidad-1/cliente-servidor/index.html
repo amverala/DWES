@@ -1,0 +1,1481 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://amverala.github.io/DWES/Unidad-1/cliente-servidor/">
+      
+      
+        <link rel="prev" href="../sistemas-operativos/">
+      
+      
+        <link rel="next" href="../servidor-local/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cliente-Servidor - DWES</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#relacion-cliente-servidor" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="DWES" class="md-header__button md-logo" aria-label="DWES" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DWES
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cliente-Servidor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DWES" class="md-nav__button md-logo" aria-label="DWES" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DWES
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas-operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Operativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente-Servidor
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente-Servidor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es un cliente?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es un servidor?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-entre-cliente-y-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relación entre cliente y servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-ejemplo-cotidiano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un ejemplo cotidiano
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-basica-de-una-aplicacion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura básica de una aplicación web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitectura básica de una aplicación web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navegador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ciclo-de-una-peticion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El ciclo de una petición web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-que-intervienen-en-una-peticion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes que intervienen en una petición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cliente-ligero-y-cliente-pesado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente ligero y cliente pesado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cliente ligero y cliente pesado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliente-ligero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente ligero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliente-pesado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente pesado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-la-arquitectura-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas de la arquitectura cliente-servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos reales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netflix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moodle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moodle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-modelo-cliente-servidor-en-dwes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El modelo cliente-servidor en DWES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades de reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoevaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autoevaluación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servidor-local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servidor Local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visual-studio-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Studio Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es un cliente?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es un servidor?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-entre-cliente-y-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relación entre cliente y servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-ejemplo-cotidiano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un ejemplo cotidiano
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-basica-de-una-aplicacion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura básica de una aplicación web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitectura básica de una aplicación web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navegador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ciclo-de-una-peticion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El ciclo de una petición web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-que-intervienen-en-una-peticion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes que intervienen en una petición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cliente-ligero-y-cliente-pesado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente ligero y cliente pesado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cliente ligero y cliente pesado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliente-ligero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente ligero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliente-pesado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliente pesado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-la-arquitectura-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas de la arquitectura cliente-servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos reales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netflix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moodle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moodle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-modelo-cliente-servidor-en-dwes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El modelo cliente-servidor en DWES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades de reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoevaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autoevaluación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="relacion-cliente-servidor">Relación Cliente-Servidor</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La arquitectura cliente-servidor constituye uno de los pilares fundamentales sobre los que se construye Internet.</p>
+<p>Cada vez que consultamos una página web, reproducimos un vídeo, realizamos una compra online o utilizamos una red social, se produce una comunicación entre un cliente que realiza una solicitud y un servidor que responde a ella.</p>
+<p>Comprender este modelo es esencial para cualquier desarrollador web.</p>
+<hr />
+<h2 id="que-es-un-cliente">¿Qué es un cliente?</h2>
+<p>Un cliente es una aplicación capaz de solicitar información o servicios a otro sistema.</p>
+<p>En el ámbito del desarrollo web, el cliente suele ser un navegador web.</p>
+<ul>
+<li>Google Chrome</li>
+<li>Mozilla Firefox</li>
+<li>Microsoft Edge</li>
+<li>Safari</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+U[Usuario] --&gt; C[Cliente]
+C --&gt; P[Petición]</code></pre>
+<hr />
+<h2 id="que-es-un-servidor">¿Qué es un servidor?</h2>
+<p>Un servidor es un sistema capaz de recibir solicitudes, procesarlas y generar respuestas.</p>
+<p>Puede proporcionar páginas web, imágenes, vídeos, archivos descargables, bases de datos y aplicaciones completas.</p>
+<pre class="mermaid"><code>flowchart LR
+Cliente --&gt; Servidor
+Servidor --&gt; Cliente</code></pre>
+<hr />
+<h2 id="relacion-entre-cliente-y-servidor">Relación entre cliente y servidor</h2>
+<ol>
+<li>El cliente solicita información.</li>
+<li>El servidor recibe la solicitud.</li>
+<li>Procesa la petición.</li>
+<li>Genera una respuesta.</li>
+<li>Devuelve el resultado al cliente.</li>
+</ol>
+<pre class="mermaid"><code>sequenceDiagram
+actor Usuario
+Usuario-&gt;&gt;Cliente: Solicita un recurso
+Cliente-&gt;&gt;Servidor: Petición
+Servidor-&gt;&gt;Servidor: Procesamiento
+Servidor--&gt;&gt;Cliente: Respuesta
+Cliente--&gt;&gt;Usuario: Muestra el resultado</code></pre>
+<hr />
+<h2 id="un-ejemplo-cotidiano">Un ejemplo cotidiano</h2>
+<table>
+<thead>
+<tr>
+<th>Arquitectura web</th>
+<th>Restaurante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cliente</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>Servidor</td>
+<td>Camarero</td>
+</tr>
+<tr>
+<td>Petición</td>
+<td>Pedido</td>
+</tr>
+<tr>
+<td>Respuesta</td>
+<td>Comida servida</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="arquitectura-basica-de-una-aplicacion-web">Arquitectura básica de una aplicación web</h2>
+<pre class="mermaid"><code>flowchart LR
+U[Usuario] --&gt; N[Navegador]
+N --&gt; S[Servidor Web]
+S --&gt; A[Aplicación]
+A --&gt; B[Base de Datos]
+B --&gt; A
+A --&gt; S
+S --&gt; N
+N --&gt; U</code></pre>
+<h3 id="usuario">Usuario</h3>
+<p>Persona que utiliza la aplicación.</p>
+<h3 id="navegador">Navegador</h3>
+<p>Programa encargado de realizar solicitudes y mostrar resultados.</p>
+<h3 id="servidor-web">Servidor Web</h3>
+<p>Software que recibe peticiones y envía respuestas.</p>
+<h3 id="aplicacion">Aplicación</h3>
+<p>Código desarrollado por los programadores.</p>
+<h3 id="base-de-datos">Base de Datos</h3>
+<p>Sistema encargado de almacenar la información.</p>
+<hr />
+<h2 id="el-ciclo-de-una-peticion-web">El ciclo de una petición web</h2>
+<p>Cuando escribimos una dirección web, el navegador debe localizar el servidor, enviar una petición y mostrar la respuesta.</p>
+<pre class="mermaid"><code>flowchart TD
+A[Usuario escribe una URL]
+--&gt; B[Navegador]
+B --&gt; C[Localización del servidor]
+C --&gt; D[Petición]
+D --&gt; E[Procesamiento]
+E --&gt; F[Respuesta]
+F --&gt; G[Visualización]</code></pre>
+<hr />
+<h2 id="componentes-que-intervienen-en-una-peticion">Componentes que intervienen en una petición</h2>
+<pre class="mermaid"><code>flowchart LR
+Usuario --&gt; Navegador --&gt; ServidorWeb --&gt; AplicacionPHP --&gt; BaseDatos
+BaseDatos --&gt; AplicacionPHP --&gt; ServidorWeb --&gt; Navegador --&gt; Usuario</code></pre>
+<hr />
+<h2 id="cliente-ligero-y-cliente-pesado">Cliente ligero y cliente pesado</h2>
+<h3 id="cliente-ligero">Cliente ligero</h3>
+<p>La mayor parte del procesamiento se realiza en el servidor.</p>
+<h3 id="cliente-pesado">Cliente pesado</h3>
+<p>Parte importante del procesamiento se realiza en el navegador.</p>
+<hr />
+<h2 id="ventajas-de-la-arquitectura-cliente-servidor">Ventajas de la arquitectura cliente-servidor</h2>
+<ul>
+<li>Centralización.</li>
+<li>Seguridad.</li>
+<li>Escalabilidad.</li>
+<li>Mantenimiento.</li>
+<li>Compartición de recursos.</li>
+</ul>
+<hr />
+<h2 id="ejemplos-reales">Ejemplos reales</h2>
+<h3 id="gmail">Gmail</h3>
+<ul>
+<li>Cliente: navegador.</li>
+<li>Servidor: Google.</li>
+</ul>
+<h3 id="netflix">Netflix</h3>
+<ul>
+<li>Cliente: aplicación o navegador.</li>
+<li>Servidor: plataforma de streaming.</li>
+</ul>
+<h3 id="moodle">Moodle</h3>
+<ul>
+<li>Cliente: navegador.</li>
+<li>Servidor: plataforma educativa.</li>
+</ul>
+<h3 id="amazon">Amazon</h3>
+<ul>
+<li>Cliente: navegador o app.</li>
+<li>Servidor: infraestructura de comercio electrónico.</li>
+</ul>
+<hr />
+<h2 id="el-modelo-cliente-servidor-en-dwes">El modelo cliente-servidor en DWES</h2>
+<pre class="mermaid"><code>flowchart LR
+Usuario --&gt; Navegador --&gt; Apache --&gt; PHP --&gt; MySQL
+MySQL --&gt; PHP --&gt; Apache --&gt; Navegador --&gt; Usuario</code></pre>
+<hr />
+<h2 id="actividades-de-reflexion">Actividades de reflexión</h2>
+<h3 id="actividad-1">Actividad 1</h3>
+<p>Explica con tus palabras qué ocurre desde que escribes una URL hasta que aparece la página.</p>
+<h3 id="actividad-2">Actividad 2</h3>
+<p>Identifica cliente y servidor en Netflix, Gmail, Amazon y Moodle.</p>
+<h3 id="actividad-3">Actividad 3</h3>
+<p>Busca tres servicios web que utilices habitualmente e identifica sus elementos.</p>
+<hr />
+<h2 id="autoevaluacion">Autoevaluación</h2>
+<ol>
+<li>¿Qué es un cliente?</li>
+<li>¿Qué es un servidor?</li>
+<li>¿Cuál es la función del navegador?</li>
+<li>¿Qué es una petición?</li>
+<li>¿Qué es una respuesta?</li>
+<li>¿Qué elementos forman una aplicación web?</li>
+<li>¿Qué ventajas ofrece la arquitectura cliente-servidor?</li>
+<li>¿Qué ocurre cuando escribimos una URL?</li>
+<li>¿Qué diferencia existe entre cliente ligero y pesado?</li>
+<li>¿Qué papel tendrá PHP en esta arquitectura?</li>
+</ol>
+<hr />
+<h2 id="resumen">Resumen</h2>
+<div class="admonition success">
+<p class="admonition-title">Ideas clave</p>
+<ul>
+<li>Internet se basa en la arquitectura cliente-servidor.</li>
+<li>El cliente solicita recursos y el servidor genera respuestas.</li>
+<li>PHP se ejecutará en el servidor.</li>
+<li>Comprender esta arquitectura es fundamental para el resto del módulo.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>
