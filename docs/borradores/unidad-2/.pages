@@ -1,0 +1,10 @@
+
+nav:
+  - index.md
+  - introduccion.md
+  - primeros-pasos-con-php.md
+  - variables-y-tipos.md
+  - estructuras-de-control.md
+  - funciones.md
+  - actividades.md
+  

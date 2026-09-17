@@ -1,0 +1,59 @@
+site_name: Desarrollo Web en Entorno Servidor
+#site_description: Unidad 1 · Estructura y significado del contenido digital
+copyright: |
+   Material docente de Desarrollo Web en Entorno Servidor
+
+theme:
+  name: material
+  language: es
+  font: false
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/code-tags
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+   # - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+plugins:
+  - search:
+      lang: es
+  - awesome-pages:
+  - exclude:
+      glob:
+        - borradores/**
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - toc:
+      permalink: true
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+- https://unpkg.com/mermaid/dist/mermaid.min.js
+- javascripts/mermaid-init.js
+
