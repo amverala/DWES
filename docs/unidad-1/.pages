@@ -1,0 +1,9 @@
+
+nav:
+    - index.md
+    - introduccion.md
+    - sistemas-operativos.md
+    - cliente-servidor.md
+    - servidor-local.md
+    - visual-studio-code.md
+    - actividades.md
