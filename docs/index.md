@@ -20,4 +20,4 @@ Conoce las principales plataformas y tecnologías utilizadas en el desarrollo de
 - Prueba los ejemplos de código y verifica los resultados.
 - Utiliza el menú lateral para navegar por la unidad.
 
-Las nuevas unidades aparecerán aquí a medida que se publiquen.
+Las nuevas unidades aparecerán aquí a medida que se publiquen, seguramente la semana que viene.
