@@ -51,14 +51,14 @@ La unidad se organiza en los siguientes apartados:
 
 ## Temporalización
 
-La dedicación estimada para esta unidad es de **16 horas** distribuidas entre el estudio de los contenidos, la realización de actividades de aprendizaje y la elaboración de la actividad evaluable.
+La dedicación estimada para esta unidad es de **12 horas** distribuidas entre el estudio de los contenidos, la realización de actividades de aprendizaje y la elaboración de la actividad evaluable.
 
 | Actividad | Horas |
 |------------|--------:|
-| Estudio de los contenidos | 8 |
-| Ejercicios de aprendizaje | 5 |
+| Estudio de los contenidos | 5 |
+| Ejercicios de aprendizaje | 4 |
 | Actividad evaluable | 3 |
-| **Total** | **16** |
+| **Total** | **12** |
 
 ---
 
