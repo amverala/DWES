@@ -6,7 +6,7 @@ Ha llegado el momento de escribir nuestro primer programa en PHP.
 
 En esta sección aprenderás cómo se escribe código PHP, cómo se integra en una página web y cómo ejecutar tus primeros ejemplos utilizando el entorno de desarrollo preparado en la unidad anterior.
 
-No te preocupes si nunca has programado antes. Comenzaremos con ejemplos muy sencillos e iremos incorporando nuevos conceptos de forma progresiva.
+Comenzaremos con ejemplos muy sencillos e iremos incorporando nuevos conceptos de forma progresiva.
 
 ---
 
