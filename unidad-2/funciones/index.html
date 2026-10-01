@@ -1,0 +1,2165 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../estructuras-de-control/">
+      
+      
+        <link rel="next" href="../actividades/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Funciones - Desarrollo Web en Entorno Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#funciones" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Funciones
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1. Plataformas de programación web en entorno servidor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/sistemas-operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Operativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/cliente-servidor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relación Cliente-Servidor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/servidor-local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servidor Local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/visual-studio-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Studio Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidad-1/actividades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2 · Características del lenguaje PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción al lenguaje PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeros-pasos-con-php/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeros pasos con PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables-y-tipos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables y tipos de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estructuras-de-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es una función?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llamar-a-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llamar a una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo void
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-utilizar-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas de utilizar funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-de-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros de una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varios-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varios parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funcionan-los-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo funcionan los parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaraciones-de-tipo-en-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaraciones de tipo en parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-habituales-en-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos habituales en funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valores-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores por defecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mostrar-no-es-devolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar no es devolver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mostrar no es devolver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar información
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devolver-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Devolver información
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retorno-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retorno de funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo funciona return
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaracion-del-tipo-de-retorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración del tipo de retorno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo práctico completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buenas prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utiliza-nombres-descriptivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utiliza nombres descriptivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declara-los-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declara los tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disena-funciones-pequenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diseña funciones pequeñas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errores frecuentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errores frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olvidar-los-parentesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Olvidar los paréntesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olvidar-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Olvidar return
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasar-un-numero-incorrecto-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasar un número incorrecto de parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades de aprendizaje
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de aprendizaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 9
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad de reflexión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es una función?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llamar-a-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llamar a una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo void
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-utilizar-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas de utilizar funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-de-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros de una función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varios-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varios parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funcionan-los-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo funcionan los parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaraciones-de-tipo-en-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaraciones de tipo en parámetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-habituales-en-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos habituales en funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valores-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores por defecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mostrar-no-es-devolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar no es devolver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mostrar no es devolver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar información
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devolver-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Devolver información
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retorno-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retorno de funciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo funciona return
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaracion-del-tipo-de-retorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración del tipo de retorno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo práctico completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buenas prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utiliza-nombres-descriptivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utiliza nombres descriptivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declara-los-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declara los tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disena-funciones-pequenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diseña funciones pequeñas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errores frecuentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errores frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olvidar-los-parentesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Olvidar los paréntesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olvidar-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Olvidar return
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasar-un-numero-incorrecto-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasar un número incorrecto de parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades de aprendizaje
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de aprendizaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad 9
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad de reflexión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="funciones">Funciones<a class="headerlink" href="#funciones" title="Permanent link">&para;</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>A medida que los programas crecen, es habitual encontrarnos con fragmentos de código que se repiten varias veces.</p>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">echo "Bienvenido";</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">echo "&lt;br&gt;";</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">echo "Bienvenido";</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">echo "&lt;br&gt;";</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">echo "Bienvenido";</span>
+</code></pre></div>
+<p>Aunque este código funciona, no resulta una solución adecuada. Si más adelante quisiéramos cambiar el mensaje, tendríamos que modificarlo en todos los lugares donde aparece.</p>
+<p>Las funciones permiten agrupar instrucciones bajo un nombre para reutilizarlas tantas veces como sea necesario.</p>
+<hr />
+<h2 id="que-es-una-funcion">¿Qué es una función?<a class="headerlink" href="#que-es-una-funcion" title="Permanent link">&para;</a></h2>
+<p>Una función es un bloque de código que realiza una tarea concreta.</p>
+<p>Una vez definida, puede ejecutarse tantas veces como sea necesario.</p>
+<pre class="mermaid"><code>flowchart LR
+A[Llamada a la función] --&gt; B[Ejecutar instrucciones] --&gt; C[Resultado]</code></pre>
+<hr />
+<h2 id="crear-una-funcion">Crear una función<a class="headerlink" href="#crear-una-funcion" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">function nombreFuncion()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">    // instrucciones</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">}</span>
+</code></pre></div>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">function saludar()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">    echo "Hola";</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="llamar-a-una-funcion">Llamar a una función<a class="headerlink" href="#llamar-a-una-funcion" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">function saludar()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">    echo "Hola";</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">saludar();</span>
+</code></pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Hola
+</code></pre></div>
+<hr />
+<h2 id="tipo-void">Tipo void<a class="headerlink" href="#tipo-void" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">function saludar(): void</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">    echo "Hola";</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">}</span>
+</code></pre></div>
+<p>El tipo <code>void</code> significa que la función no devuelve ningún resultado mediante <code>return</code>.</p>
+<hr />
+<h2 id="ventajas-de-utilizar-funciones">Ventajas de utilizar funciones<a class="headerlink" href="#ventajas-de-utilizar-funciones" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reutilizar código.</li>
+<li>Reducir errores.</li>
+<li>Mejorar la legibilidad.</li>
+<li>Facilitar el mantenimiento.</li>
+<li>Dividir problemas complejos en tareas más sencillas.</li>
+</ul>
+<hr />
+<h2 id="parametros-de-una-funcion">Parámetros de una función<a class="headerlink" href="#parametros-de-una-funcion" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">function saludar($nombre)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">    echo "Hola " . $nombre;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">saludar("Ana");</span>
+</code></pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Hola Ana
+</code></pre></div>
+<hr />
+<h2 id="varios-parametros">Varios parámetros<a class="headerlink" href="#varios-parametros" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">function presentar($nombre, $edad)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">    echo "Me llamo " . $nombre;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">    echo " y tengo " . $edad . " años.";</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="x">presentar("Ana", 20);</span>
+</code></pre></div>
+<hr />
+<h2 id="como-funcionan-los-parametros">Cómo funcionan los parámetros<a class="headerlink" href="#como-funcionan-los-parametros" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+A[Datos de entrada] --&gt; B[Función] --&gt; C[Resultado]</code></pre>
+<hr />
+<h2 id="declaraciones-de-tipo-en-parametros">Declaraciones de tipo en parámetros<a class="headerlink" href="#declaraciones-de-tipo-en-parametros" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="x">function mostrarEdad(int $edad): void</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">    echo $edad;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="tipos-habituales-en-funciones">Tipos habituales en funciones<a class="headerlink" href="#tipos-habituales-en-funciones" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>"Ana"</td>
+</tr>
+<tr>
+<td>int</td>
+<td>20</td>
+</tr>
+<tr>
+<td>float</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>array</td>
+<td>["DWES", "DIW"]</td>
+</tr>
+<tr>
+<td>void</td>
+<td>Sin valor de retorno</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="valores-por-defecto">Valores por defecto<a class="headerlink" href="#valores-por-defecto" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="x">function saludar(string $nombre = "Alumno"): void</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">    echo "Hola " . $nombre;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="x">}</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="x">saludar();</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="x">saludar("Ana");</span>
+</code></pre></div>
+<hr />
+<h2 id="mostrar-no-es-devolver">Mostrar no es devolver<a class="headerlink" href="#mostrar-no-es-devolver" title="Permanent link">&para;</a></h2>
+<h3 id="mostrar-informacion">Mostrar información<a class="headerlink" href="#mostrar-informacion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="x">function mostrarMensaje(): void</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">    echo "Hola";</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="x">}</span>
+</code></pre></div>
+<h3 id="devolver-informacion">Devolver información<a class="headerlink" href="#devolver-informacion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="x">function obtenerMensaje(): string</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">    return "Hola";</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="retorno-de-funciones">Retorno de funciones<a class="headerlink" href="#retorno-de-funciones" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="x">function sumar(int $a, int $b): int</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="x">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="x">    return $a + $b;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="x">}</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="x">$resultado = sumar(3, 5);</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="x">echo $resultado;</span>
+</code></pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>8
+</code></pre></div>
+<hr />
+<h2 id="como-funciona-return">Cómo funciona return<a class="headerlink" href="#como-funciona-return" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+A[Datos de entrada] --&gt; B[Función]
+B --&gt; C[Procesamiento]
+C --&gt; D[Valor de retorno]</code></pre>
+<hr />
+<h2 id="declaracion-del-tipo-de-retorno">Declaración del tipo de retorno<a class="headerlink" href="#declaracion-del-tipo-de-retorno" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="x">function obtenerNombre(): string</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="x">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="x">    return "Ana";</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="x">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="x">function sumar(int $a, int $b): int</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="x">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="x">    return $a + $b;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="ejemplo-practico-completo">Ejemplo práctico completo<a class="headerlink" href="#ejemplo-practico-completo" title="Permanent link">&para;</a></h2>
+<p>Supongamos que queremos calcular la nota media de un alumno.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="x">function calcularMedia(</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="x">    float $nota1,</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="x">    float $nota2</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="x">): float</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="x">{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="x">    return ($nota1 + $nota2) / 2;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="x">}</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="x">$media = calcularMedia(8.5, 7.5);</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="x">echo "Media: " . $media;</span>
+</code></pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Media: 8.0
+</code></pre></div>
+<p>También podríamos formatear el resultado utilizando <code>printf()</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="x">printf(</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="x">    "Media: %.1f",</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="x">    calcularMedia(8.5, 7.5)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="x">);</span>
+</code></pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Media: 8.0
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Buenas prácticas</p>
+<p>Cuando trabajes con notas o cantidades decimales, resulta conveniente controlar el número de decimales mostrados al usuario.</p>
+</div>
+<hr />
+<h2 id="buenas-practicas">Buenas prácticas<a class="headerlink" href="#buenas-practicas" title="Permanent link">&para;</a></h2>
+<h3 id="utiliza-nombres-descriptivos">Utiliza nombres descriptivos<a class="headerlink" href="#utiliza-nombres-descriptivos" title="Permanent link">&para;</a></h3>
+<p>✅ Correcto</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="x">calcularMedia()</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="x">obtenerAlumno()</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="x">mostrarDatos()</span>
+</code></pre></div>
+<p>❌ Poco descriptivo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="x">f1()</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="x">dato()</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="x">proceso()</span>
+</code></pre></div>
+<h3 id="declara-los-tipos">Declara los tipos<a class="headerlink" href="#declara-los-tipos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="x">function sumar(int $a, int $b): int</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="x">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="x">    return $a + $b;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="x">}</span>
+</code></pre></div>
+<h3 id="disena-funciones-pequenas">Diseña funciones pequeñas<a class="headerlink" href="#disena-funciones-pequenas" title="Permanent link">&para;</a></h3>
+<p>Cada función debería resolver una única tarea.</p>
+<hr />
+<h2 id="errores-frecuentes">Errores frecuentes<a class="headerlink" href="#errores-frecuentes" title="Permanent link">&para;</a></h2>
+<h3 id="olvidar-los-parentesis">Olvidar los paréntesis<a class="headerlink" href="#olvidar-los-parentesis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="x">saludar();</span>
+</code></pre></div>
+<h3 id="olvidar-return">Olvidar return<a class="headerlink" href="#olvidar-return" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="x">function sumar($a, $b)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="x">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="x">    return $a + $b;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="x">}</span>
+</code></pre></div>
+<h3 id="pasar-un-numero-incorrecto-de-parametros">Pasar un número incorrecto de parámetros<a class="headerlink" href="#pasar-un-numero-incorrecto-de-parametros" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="x">presentar("Ana");</span>
+</code></pre></div>
+<hr />
+<h2 id="actividades-de-aprendizaje">Actividades de aprendizaje<a class="headerlink" href="#actividades-de-aprendizaje" title="Permanent link">&para;</a></h2>
+<h3 id="actividad-1">Actividad 1<a class="headerlink" href="#actividad-1" title="Permanent link">&para;</a></h3>
+<p>Crea una función llamada <code>saludar()</code> que muestre tu nombre.</p>
+<h3 id="actividad-2">Actividad 2<a class="headerlink" href="#actividad-2" title="Permanent link">&para;</a></h3>
+<p>Crea una función llamada <code>mostrarCiudad()</code> que reciba una ciudad como parámetro.</p>
+<h3 id="actividad-3">Actividad 3<a class="headerlink" href="#actividad-3" title="Permanent link">&para;</a></h3>
+<p>Crea una función llamada <code>sumar()</code> que reciba dos números y muestre el resultado.</p>
+<h3 id="actividad-4">Actividad 4<a class="headerlink" href="#actividad-4" title="Permanent link">&para;</a></h3>
+<p>Crea una función con un parámetro cuyo valor por defecto sea <code>"Alumno"</code>.</p>
+<h3 id="actividad-5">Actividad 5<a class="headerlink" href="#actividad-5" title="Permanent link">&para;</a></h3>
+<p>Crea una función que devuelva el área de un rectángulo.</p>
+<h3 id="actividad-6">Actividad 6<a class="headerlink" href="#actividad-6" title="Permanent link">&para;</a></h3>
+<p>Añade declaraciones de tipo utilizando PHP 8.</p>
+<h3 id="actividad-7">Actividad 7<a class="headerlink" href="#actividad-7" title="Permanent link">&para;</a></h3>
+<p>Crea una función llamada <code>esAprobado()</code> que reciba una nota y devuelva <code>true</code> o <code>false</code>.</p>
+<h3 id="actividad-8">Actividad 8<a class="headerlink" href="#actividad-8" title="Permanent link">&para;</a></h3>
+<p>Crea una función que reciba un array de notas y devuelva la nota media.</p>
+<h3 id="actividad-9">Actividad 9<a class="headerlink" href="#actividad-9" title="Permanent link">&para;</a></h3>
+<p>Desarrolla una ficha de alumno utilizando funciones.</p>
+<p>La aplicación deberá:</p>
+<ul>
+<li>Obtener el nombre del alumno.</li>
+<li>Obtener la edad.</li>
+<li>Calcular una nota media.</li>
+<li>Indicar si el alumno está aprobado.</li>
+</ul>
+<p>Utiliza parámetros, valores de retorno y declaraciones de tipo.</p>
+<hr />
+<h2 id="actividad-de-reflexion">Actividad de reflexión<a class="headerlink" href="#actividad-de-reflexion" title="Permanent link">&para;</a></h2>
+<ol>
+<li>¿Cuál será más fácil de mantener: un programa con código repetido o uno que utilice funciones?</li>
+<li>¿Qué ventajas aporta la reutilización de código?</li>
+<li>¿Por qué es recomendable declarar tipos en PHP 8?</li>
+</ol>
+<hr />
+<h2 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">&para;</a></h2>
+<p>En esta sección has aprendido a:</p>
+<ul>
+<li>Crear funciones.</li>
+<li>Ejecutar funciones.</li>
+<li>Utilizar parámetros.</li>
+<li>Asignar valores por defecto.</li>
+<li>Declarar tipos en PHP 8.</li>
+<li>Utilizar el tipo <code>void</code>.</li>
+<li>Devolver resultados mediante <code>return</code>.</li>
+<li>Especificar tipos de retorno.</li>
+<li>Aplicar buenas prácticas de programación.</li>
+</ul>
+<p>Ya dispones de los conocimientos fundamentales necesarios para desarrollar programas PHP estructurados, reutilizables y fáciles de mantener.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../estructuras-de-control/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Estructuras de control">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Estructuras de control
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../actividades/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividades">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Actividades
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Material docente de Desarrollo Web en Entorno Servidor
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
