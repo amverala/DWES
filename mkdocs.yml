@@ -30,6 +30,7 @@ theme:
     - search.highlight
     - search.suggest
     - content.code.copy
+    - content.cards
 plugins:
   - search:
       lang: es
