@@ -1,0 +1,10 @@
+
+nav:
+  - index.md
+  - introduccion-frameworks.md
+  - frameworks-php-y-symfony.md
+  - gestion-dependencias.md
+  - composer.md
+  - composer-json-y-autoload.md
+  - actividades-aprendizaje.md
+  - actividad-evaluable.md
