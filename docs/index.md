@@ -32,6 +32,14 @@ En este espacio encontrarás los materiales, actividades, ejemplos, ejercicios y
 
     [Abrir unidad](https://amverala.github.io/DWES/unidad-3/)
 
+-   :material-package-variant-closed: **Unidad 4 · Frameworks PHP y gestión de          dependencias**
+
+    ---
+
+    Aprende a utilizar gestores de dependencias y frameworks modernos para desarrollar aplicaciones PHP de forma más eficiente, reutilizando código y organizando proyectos siguiendo buenas prácticas.
+
+    [Abrir unidad](https://amverala.github.io/DWES/unidad-4/)
+
 </div>
 
 ## Cómo utilizar este sitio
