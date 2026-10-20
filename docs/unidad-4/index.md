@@ -65,6 +65,7 @@ A continuación puedes acceder a los distintos apartados de la unidad:
 - [Gestión de dependencias](gestion-dependencias.md)
 - [Composer](composer.md)
 - [Composer.json y autoload](composer-json-y-autoload.md)
-- [Actividades](actividades.md)
+- [Actividades de aprendizaje](actividades-aprendizaje.md)
+- [Actividad evaluable](actividad-evaluable.md)
 
 ¡Comencemos a descubrir las herramientas que utilizan los desarrolladores PHP profesionales!
