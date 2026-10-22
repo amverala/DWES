@@ -1,0 +1,13 @@
+
+nav:
+  - index.md
+  - symfony-como-framework-php.md
+  - instalacion-proyecto-symfony.md
+  - configuracion-aplicacion-symfony.md
+  - primera-aplicacion-symfony.md
+  - enrutamiento.md
+  - twig.md
+  - formularios.md
+  - sesiones.md
+  - actividades-aprendizaje.md
+  - actividades-evaluables.md
