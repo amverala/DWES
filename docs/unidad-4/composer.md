@@ -32,12 +32,33 @@ Con Composer todo este proceso se realiza mediante comandos sencillos.
 
 ## Instalación de Composer
 
+
+### Instalar Composer en Ubuntu
+
+Actualizar los repositorios:
+
 ```bash
-composer --version
+sudo apt update
 ```
+
+Instalar Composer:
+
+```bash
+sudo apt install composer
+```
+
+### Comprobar la instalación
+
+Verificar que PHP está instalado:
 
 ```bash
 php --version
+```
+
+Verificar que Composer se ha instalado correctamente:
+
+```bash
+composer --version
 ```
 
 ---
@@ -130,6 +151,35 @@ proyecto-composer/
 
 ---
 
+### Como ejemplo de uso de Composer, vamos a instalar **Monolog**.
+
+### ¿Para qué sirve Monolog?
+
+Monolog es una biblioteca de PHP que permite registrar eventos, advertencias y errores de una aplicación en archivos u otros sistemas de almacenamiento.
+
+Se utiliza para:
+
+- Registrar errores que ocurren durante la ejecución de la aplicación.
+- Guardar advertencias y mensajes informativos.
+- Facilitar la depuración y el mantenimiento del código.
+- Llevar un historial de eventos importantes.
+- Monitorizar aplicaciones en entornos de producción.
+
+Por ejemplo, en lugar de mostrar un error por pantalla:
+
+```php
+echo "Error al conectar con la base de datos";
+```
+
+podemos registrarlo en un archivo de log:
+
+```php
+$log->error('Error al conectar con la base de datos');
+```
+
+De esta forma, el error queda almacenado y puede revisarse posteriormente sin afectar a los usuarios de la aplicación.
+
+Monolog es una de las bibliotecas de logging más utilizadas en PHP y está integrada por defecto en Symfony.
 ## Instalando Monolog paso a paso
 
 ```bash
@@ -155,6 +205,60 @@ $log->error('Error de ejemplo');
 php index.php
 ```
 
+### Explicación del código
+
+```php
+require 'vendor/autoload.php';
+```
+
+Carga automáticamente las clases instaladas mediante Composer. Gracias a este archivo no es necesario incluir manualmente los ficheros de Monolog.
+
+```php
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+```
+
+Importa las clases que vamos a utilizar:
+
+- `Logger`: permite crear y gestionar registros de eventos (logs).
+- `StreamHandler`: indica dónde se almacenarán esos registros.
+
+```php
+$log = new Logger('app');
+```
+
+Crea un objeto logger llamado `app`. Este nombre identificará el origen de los mensajes registrados.
+
+```php
+$log->pushHandler(new StreamHandler('app.log'));
+```
+
+Añade un manejador (*handler*) que guardará los mensajes en el archivo `app.log`.
+
+```php
+$log->warning('Mensaje de prueba');
+```
+
+Registra un mensaje de nivel **WARNING** (advertencia). Se utiliza para indicar situaciones que no son errores graves, pero que requieren atención.
+
+```php
+$log->error('Error de ejemplo');
+```
+
+Registra un mensaje de nivel **ERROR**. Se utiliza para indicar errores que afectan al funcionamiento de la aplicación.
+
+Finalmente, al ejecutar:
+
+```bash
+php index.php
+```
+
+Monolog crea (o actualiza) el archivo:
+
+```text
+app.log
+```
+y almacena en él los mensajes generados por la aplicación.
 ---
 
 ## Eliminar una dependencia
@@ -175,11 +279,23 @@ composer update
 
 ## Instalar dependencias de un proyecto existente
 
+Si descargamos o clonamos un proyecto que ya dispone de un archivo `composer.json`, podemos instalar todas sus dependencias mediante:
+
 ```bash
 composer install
 ```
 
----
+Este comando lee la configuración del proyecto y descarga automáticamente las bibliotecas necesarias para que la aplicación funcione correctamente.
+
+Además, crea la carpeta:
+
+```text
+vendor/
+```
+
+que contiene las dependencias instaladas, y genera los archivos necesarios para que puedan utilizarse desde el código PHP.
+
+Este es uno de los comandos más utilizados en Composer, ya que permite preparar un proyecto existente para su ejecución sin tener que instalar manualmente cada dependencia.
 
 ## Comandos más utilizados
 
