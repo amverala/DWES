@@ -40,6 +40,13 @@ En este espacio encontrarás los materiales, actividades, ejemplos, ejercicios y
 
     [Abrir unidad](https://amverala.github.io/DWES/unidad-4/)
 
+-   :material-symfony: **Unidad 5 · Desarrollo de aplicaciones con Symfony**
+
+    ---
+    Aprende a desarrollar aplicaciones web profesionales utilizando Symfony, uno de los frameworks PHP más utilizados en entornos empresariales. Conocerás su estructura, el patrón MVC, el sistema de rutas, controladores, plantillas Twig, acceso a bases de datos con Doctrine y las herramientas que facilitan el desarrollo de aplicaciones robustas y mantenibles.
+
+    [Abrir unidad](https://amverala.github.io/DWES/unidad-5/)
+
 </div>
 
 ## Cómo utilizar este sitio
