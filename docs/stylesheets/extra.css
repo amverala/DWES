@@ -40,3 +40,8 @@
     color: inherit;
     font-size: 1.05rem;
 }
+
+.md-typeset h2 {
+  font-weight: 700;
+  color: #19d2cf;
+}

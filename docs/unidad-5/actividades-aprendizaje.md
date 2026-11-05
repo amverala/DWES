@@ -45,11 +45,11 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
     symfony --version
     ```
 
-    **Solución**
+    ??? success "Solución"
 
-    Debes obtener información de versión para las tres herramientas.
+        Debes obtener información de versión para las tres herramientas.
 
-    Si alguno de los comandos no responde correctamente, será necesario revisar la instalación correspondiente.
+        Si alguno de los comandos no responde correctamente, será necesario revisar la instalación correspondiente.
 
 ---
 
@@ -73,15 +73,15 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
     | public | |
     | vendor | |
 
-    **Solución**
+    ??? success "Solución"
 
-    | Elemento | Función |
-    |-----------|----------|
-    | src | Código fuente de la aplicación |
-    | templates | Plantillas Twig |
-    | config | Configuración del framework |
-    | public | Punto de entrada público |
-    | vendor | Dependencias gestionadas por Composer |
+        | Elemento | Función |
+        |-----------|----------|
+        | src | Código fuente de la aplicación |
+        | templates | Plantillas Twig |
+        | config | Configuración del framework |
+        | public | Punto de entrada público |
+        | vendor | Dependencias gestionadas por Composer |
 
 ---
 
@@ -105,27 +105,27 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     Cada una debe mostrar un mensaje diferente.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    #[Route('/')]
-    public function inicio(): Response
-    {
-        return new Response('Página principal');
-    }
+        ```php
+        #[Route('/')]
+        public function inicio(): Response
+        {
+            return new Response('Página principal');
+        }
 
-    #[Route('/empresa')]
-    public function empresa(): Response
-    {
-        return new Response('Página de empresa');
-    }
+        #[Route('/empresa')]
+        public function empresa(): Response
+        {
+            return new Response('Página de empresa');
+        }
 
-    #[Route('/contacto')]
-    public function contacto(): Response
-    {
-        return new Response('Página de contacto');
-    }
-    ```
+        #[Route('/contacto')]
+        public function contacto(): Response
+        {
+            return new Response('Página de contacto');
+        }
+        ```
 
 ---
 
@@ -147,19 +147,19 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     que muestre un saludo personalizado.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    #[Route('/usuario/{nombre}')]
-    public function usuario(
-        string $nombre
-    ): Response
-    {
-        return new Response(
-            "Hola $nombre"
-        );
-    }
-    ```
+        ```php
+        #[Route('/usuario/{nombre}')]
+        public function usuario(
+            string $nombre
+        ): Response
+        {
+            return new Response(
+                "Hola $nombre"
+            );
+        }
+        ```
 
 ---
 
@@ -191,20 +191,20 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
     /producto/15/teclado
     ```
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    #[Route('/producto/{id}/{nombre}')]
-    public function producto(
-        int $id,
-        string $nombre
-    ): Response
-    {
-        return new Response(
-            "Producto $id - $nombre"
-        );
-    }
-    ```
+        ```php
+        #[Route('/producto/{id}/{nombre}')]
+        public function producto(
+            int $id,
+            string $nombre
+        ): Response
+        {
+            return new Response(
+                "Producto $id - $nombre"
+            );
+        }
+        ```
 
 ---
 
@@ -234,13 +234,13 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     Modifica el controlador para renderizar dicha plantilla.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    return $this->render(
-        'inicio.html.twig'
-    );
-    ```
+        ```php
+        return $this->render(
+            'inicio.html.twig'
+        );
+        ```
 
 ---
 
@@ -268,24 +268,24 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     y muéstrala en una plantilla.
 
-    **Solución**
+    ??? success "Solución"
 
-    Controlador:
+        Controlador:
 
-    ```php
-    return $this->render(
-        'curso.html.twig',
-        [
-            'curso' => 'DWES'
-        ]
-    );
-    ```
+        ```php
+        return $this->render(
+            'curso.html.twig',
+            [
+                'curso' => 'DWES'
+            ]
+        );
+        ```
 
-    Plantilla:
+        Plantilla:
 
-    ```twig
-    {{ curso }}
-    ```
+        ```twig
+        {{ curso }}
+        ```
 
 ---
 
@@ -301,15 +301,15 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     Muestra una lista de módulos utilizando un bucle `for`.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```twig
-    <ul>
-    {% for modulo in modulos %}
-        <li>{{ modulo }}</li>
-    {% endfor %}
-    </ul>
-    ```
+        ```twig
+        <ul>
+        {% for modulo in modulos %}
+            <li>{{ modulo }}</li>
+        {% endfor %}
+        </ul>
+        ```
 
 ---
 
@@ -333,17 +333,17 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     y muéstralo en una plantilla.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    $form = $this->createFormBuilder()
-        ->add('nombre')
-        ->getForm();
-    ```
+        ```php
+        $form = $this->createFormBuilder()
+            ->add('nombre')
+            ->getForm();
+        ```
 
-    ```twig
-    {{ form(formulario) }}
-    ```
+        ```twig
+        {{ form(formulario) }}
+        ```
 
 ---
 
@@ -365,18 +365,18 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     para procesar la petición.
 
-    **Solución**
+    ??? success "Solución"
 
-    ```php
-    $form->handleRequest($request);
+        ```php
+        $form->handleRequest($request);
 
-    if (
-        $form->isSubmitted() &&
-        $form->isValid()
-    ) {
-        $datos = $form->getData();
-    }
-    ```
+        if (
+            $form->isSubmitted() &&
+            $form->isValid()
+        ) {
+            $datos = $form->getData();
+        }
+        ```
 
 ---
 
@@ -400,9 +400,9 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     y muestra un mensaje personalizado utilizando Twig.
 
-    **Pista**
+    ??? tip "Pista"
 
-    Utiliza un parámetro de ruta y envíalo a la plantilla mediante `render()`.
+        Utiliza un parámetro de ruta y envíalo a la plantilla mediante `render()`.
 
 ---
 
@@ -424,11 +424,11 @@ El objetivo de las siguientes actividades es consolidar estos conocimientos medi
 
     e inclúyela en varias vistas.
 
-    **Solución orientativa**
+    ??? success "Solución orientativa"
 
-    ```twig
-    {{ include('menu.html.twig') }}
-    ```
+        ```twig
+        {{ include('menu.html.twig') }}
+        ```
 
 ---
 

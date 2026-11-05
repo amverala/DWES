@@ -23,11 +23,12 @@ Cada tarea aborda una parte diferente del framework y permite consolidar las com
     Lee detenidamente cada tarea antes de comenzar su desarrollo. Algunas tareas reutilizan conocimientos adquiridos en actividades anteriores.
 
 ---
+
 <hr style="border: 4px solid #19d2cfff;">
 
-# Tarea 1. Instalación y puesta en marcha de Symfony
+## **Tarea 1. Instalación y puesta en marcha de Symfony**
 
-## Objetivos
+### Objetivos
 
 Con esta actividad demostrarás que eres capaz de:
 
@@ -39,7 +40,7 @@ Con esta actividad demostrarás que eres capaz de:
 
 ---
 
-## Enunciado
+### Enunciado
 
 Crea un vídeo donde se visualicen claramente las siguientes tareas realizadas en tu equipo:
 
@@ -51,7 +52,7 @@ Crea un vídeo donde se visualicen claramente las siguientes tareas realizadas e
 
 ---
 
-## Requisitos técnicos
+### Requisitos técnicos
 
 Durante la grabación deberá aparecer:
 
@@ -64,7 +65,7 @@ Los pasos deberán realizarse en el orden indicado.
 
 ---
 
-## Formato de entrega
+### Formato de entrega
 
 - Un único vídeo en formato MP4.
 - Resolución mínima recomendada: 720p.
@@ -78,11 +79,12 @@ Los pasos deberán realizarse en el orden indicado.
     Antes de grabar el vídeo realiza una prueba completa del proceso para asegurarte de que todas las herramientas funcionan correctamente.
 
 ---
+
 <hr style="border: 4px solid #19d2cfff;">
 
-# Tarea 2. Desarrollo de un controlador de gestión de tareas
+## **Tarea 2. Desarrollo de un controlador de gestión de tareas**
 
-## Objetivos
+### Objetivos
 
 Con esta actividad demostrarás que eres capaz de:
 
@@ -95,7 +97,7 @@ Con esta actividad demostrarás que eres capaz de:
 
 ---
 
-## Enunciado
+### Enunciado
 
 Crea un controlador denominado:
 
@@ -115,7 +117,7 @@ La respuesta puede generarse directamente desde el controlador mediante un objet
 
 ---
 
-## Usuarios autorizados
+### Usuarios autorizados
 
 La aplicación deberá incluir, al menos:
 
@@ -127,7 +129,7 @@ Sofía
 
 ---
 
-## Ruta
+### Ruta
 
 La información deberá recibirse mediante una ruta similar a:
 
@@ -137,7 +139,7 @@ La información deberá recibirse mediante una ruta similar a:
 
 ---
 
-## Entrega
+### Entrega
 
 Se deberá entregar exclusivamente el archivo:
 
@@ -152,11 +154,12 @@ TareaController.php
     No está permitido utilizar plantillas Twig ni bases de datos. La información deberá gestionarse mediante arrays definidos dentro del controlador.
 
 ---
+
 <hr style="border: 4px solid #19d2cfff;">
 
-# Tarea 3. Visualización de tareas mediante Twig
+## **Tarea 3. Visualización de tareas mediante Twig**
 
-## Objetivos
+### Objetivos
 
 Con esta actividad demostrarás que eres capaz de:
 
@@ -167,7 +170,7 @@ Con esta actividad demostrarás que eres capaz de:
 
 ---
 
-## Enunciado
+### Enunciado
 
 Partiendo de la tarea anterior:
 
@@ -184,7 +187,7 @@ El controlador deberá:
 
 ---
 
-## Plantilla Twig
+### Plantilla Twig
 
 La plantilla deberá mostrar:
 
@@ -194,7 +197,7 @@ La plantilla deberá mostrar:
 
 ---
 
-## Archivos a entregar
+### Archivos a entregar
 
 Deberás entregar:
 
@@ -221,9 +224,10 @@ estilos.css
 ---
 
 <hr style="border: 4px solid #19d2cfff;">
-# Tarea 4. Formularios y sesiones en Symfony
 
-## Objetivos
+## **Tarea 4. Formularios y sesiones en Symfony**
+
+### Objetivos
 
 Con esta actividad demostrarás que eres capaz de:
 
@@ -236,15 +240,15 @@ Con esta actividad demostrarás que eres capaz de:
 
 ---
 
-## Enunciado
+### Enunciado
 
 Desarrolla una aplicación Symfony que permita a un usuario iniciar sesión mediante un nombre de usuario y mantener dicha información almacenada en una sesión.
 
 ---
 
-## Requisitos funcionales
+### Requisitos funcionales
 
-### 1. Formulario de inicio de sesión
+#### 1. Formulario de inicio de sesión
 
 Crear un formulario utilizando FormBuilder definido en una clase independiente del controlador.
 
@@ -255,7 +259,7 @@ El formulario deberá contener:
 
 ---
 
-### 2. Validación del formulario
+#### 2. Validación del formulario
 
 El nombre de usuario será obligatorio.
 
@@ -263,7 +267,7 @@ No podrá enviarse vacío.
 
 ---
 
-### 3. Almacenamiento en sesión
+#### 3. Almacenamiento en sesión
 
 Una vez validado el formulario:
 
@@ -272,7 +276,7 @@ Una vez validado el formulario:
 
 ---
 
-### 4. Mensajes Flash
+#### 4. Mensajes Flash
 
 La aplicación deberá mostrar mensajes Flash para:
 
@@ -282,7 +286,7 @@ La aplicación deberá mostrar mensajes Flash para:
 
 ---
 
-### 5. Página de bienvenida
+#### 5. Página de bienvenida
 
 La aplicación dispondrá de una página que salude al usuario almacenado en sesión.
 
@@ -290,7 +294,7 @@ Si no existe sesión activa deberá redirigir automáticamente a la página de i
 
 ---
 
-### 6. Cierre de sesión
+#### 6. Cierre de sesión
 
 La aplicación deberá incluir un mecanismo para cerrar sesión.
 
@@ -302,7 +306,7 @@ La acción deberá:
 
 ---
 
-## Entrega
+### Entrega
 
 Se deberá entregar:
 
@@ -311,7 +315,7 @@ Se deberá entregar:
 
 ---
 
-## Vídeo obligatorio
+### Vídeo obligatorio
 
 El vídeo deberá incluir:
 
@@ -326,9 +330,10 @@ El vídeo deberá incluir:
 ---
 
 <hr style="border: 4px solid #19d2cfff;">
-# Tarea 5. Herencia de plantillas con Twig
 
-## Objetivos
+## **Tarea 5. Herencia de plantillas con Twig**
+
+### Objetivos
 
 Con esta actividad demostrarás que eres capaz de:
 
@@ -340,7 +345,7 @@ Con esta actividad demostrarás que eres capaz de:
 
 ---
 
-## Enunciado
+### Enunciado
 
 Desarrolla una aplicación web Symfony que implemente herencia de plantillas utilizando Twig.
 
@@ -354,7 +359,7 @@ La aplicación deberá disponer de:
 
 ---
 
-## Plantilla base
+### Plantilla base
 
 Crear:
 
@@ -364,17 +369,17 @@ base.html.twig
 
 La plantilla deberá incluir:
 
-### Cabecera
+#### Cabecera
 
 - Título de la aplicación.
 - Menú de navegación.
 
-### Menú
+#### Menú
 
 - Enlace a la página principal.
 - Enlace a la página de contacto.
 
-### Cuerpo
+#### Cuerpo
 
 Definir un bloque:
 
@@ -382,13 +387,13 @@ Definir un bloque:
 {% block body %}
 ```
 
-### Pie de página
+#### Pie de página
 
 Mostrar un mensaje de copyright.
 
 ---
 
-## Página de inicio
+### Página de inicio
 
 Crear:
 
@@ -404,7 +409,7 @@ La plantilla deberá:
 
 ---
 
-## Página de contacto
+### Página de contacto
 
 Crear:
 
@@ -419,7 +424,7 @@ La plantilla deberá:
 
 ---
 
-## Formulario
+### Formulario
 
 El formulario deberá implementarse mediante una clase Type independiente.
 
@@ -431,7 +436,7 @@ Campos mínimos:
 
 ---
 
-## Controlador
+### Controlador
 
 Crear:
 
@@ -451,7 +456,7 @@ Definir las rutas:
 
 ---
 
-## CSS
+### CSS
 
 Crear:
 
@@ -476,7 +481,7 @@ La plantilla base deberá cargar la hoja de estilos mediante:
 
 ---
 
-## Servidor
+### Servidor
 
 Configura y ejecuta el servidor de desarrollo Symfony.
 
@@ -494,7 +499,7 @@ y
 
 ---
 
-## Entrega
+### Entrega
 
 Se deberá entregar:
 
@@ -503,13 +508,13 @@ Se deberá entregar:
 
 ---
 
-## Contenido obligatorio del vídeo
+### Contenido obligatorio del vídeo
 
-### Explicación funcional
+#### Explicación funcional
 
 Descripción general de la aplicación.
 
-### Explicación técnica
+#### Explicación técnica
 
 Se deberán comentar:
 
@@ -518,7 +523,7 @@ Se deberán comentar:
 - Plantillas Twig.
 - CSS.
 
-### Demostración práctica
+#### Demostración práctica
 
 Mostrar:
 
